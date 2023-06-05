@@ -1,3 +1,43 @@
 .techno-Add {
   padding: 20px;
 }
+.button {
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type="text"] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+textarea {
+  height: 150px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+}
