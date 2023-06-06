@@ -5,7 +5,7 @@ import Menu from "./components/Menu";
 import TechnoAdd from "./pages/TechnoAdd";
 import TechnoList from "./pages/TechnoList";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v1 as uuid } from "uuid";
 
 function App() {
@@ -24,8 +24,18 @@ function App() {
     },
   ]);
 
+  useEffect(() => {
+    console.log("useEffect with []");
+  }, []);
+
   function handleAddTechno(techno) {
     setTechnos([...technos, { ...techno, id: uuid() }]);
+  }
+
+  function handledelete(id) {
+    setTechnos((technos) => {
+      return technos.filter((i) => i.id !== id);
+    });
   }
 
   return (
@@ -41,7 +51,12 @@ function App() {
         ></Route>
         <Route
           path="/list"
-          element={<TechnoList listTechno={technos}></TechnoList>}
+          element={
+            <TechnoList
+              listTechno={technos}
+              deleteTechno={handledelete}
+            ></TechnoList>
+          }
         ></Route>
       </Routes>
     </div>

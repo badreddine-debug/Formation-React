@@ -28,7 +28,7 @@ export default function TechnoAdd(props) {
       <h1>Add a Techno</h1>
       <div>
         <form onSubmit={(evt) => handlSubmit(evt)}>
-          <label for="name">Name:</label>
+          <label htmlFor="name">Name:</label>
           <br />
           <input
             type="text"
@@ -38,7 +38,7 @@ export default function TechnoAdd(props) {
             onChange={(event) => handleChange(event)}
           />
           <br />
-          <label for="categorie">Techno categorie:</label>
+          <label htmlFor="categorie">Techno categorie:</label>
           <br />
           <select
             name="categorie"
@@ -53,7 +53,7 @@ export default function TechnoAdd(props) {
             <option value="Other">Other</option>
           </select>
           <br />
-          <label for="descrption">Description:</label>
+          <label htmlFor="descrption">Description:</label>
           <br />
           <textarea
             name="descrption"
