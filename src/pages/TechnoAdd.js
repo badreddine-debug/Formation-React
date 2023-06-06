@@ -1,9 +1,9 @@
 import { useState } from "react";
 export default function TechnoAdd(props) {
   const [techno, setTechnos] = useState({
-    technoname: "",
-    technocategory: "",
-    technodescription: "",
+    name: "",
+    categorie: "",
+    descrption: "",
   });
 
   const { AddTechno } = props;
@@ -12,9 +12,9 @@ export default function TechnoAdd(props) {
     evt.preventDefault();
     AddTechno(techno);
     setTechnos({
-      technoname: "",
-      technocategory: "",
-      technodescription: "",
+      name: "",
+      categorie: "",
+      descrption: "",
     });
   }
 
@@ -28,22 +28,22 @@ export default function TechnoAdd(props) {
       <h1>Add a Techno</h1>
       <div>
         <form onSubmit={(evt) => handlSubmit(evt)}>
-          <label for="technoname">Name:</label>
+          <label for="name">Name:</label>
           <br />
           <input
             type="text"
-            name="technoname"
-            id="technoname"
-            value={techno.technoname}
+            name="name"
+            id="name"
+            value={techno.name}
             onChange={(event) => handleChange(event)}
           />
           <br />
-          <label for="technoname">Techno categorie:</label>
+          <label for="categorie">Techno categorie:</label>
           <br />
           <select
-            name="technocategory"
-            id="technoycategory"
-            value={techno.technocategory}
+            name="categorie"
+            id="categorie"
+            value={techno.categorie}
             onChange={(event) => handleChange(event)}
           >
             <option value="">Select a gategory</option>
@@ -53,13 +53,13 @@ export default function TechnoAdd(props) {
             <option value="Other">Other</option>
           </select>
           <br />
-          <label for="technodescription">Description:</label>
+          <label for="descrption">Description:</label>
           <br />
           <textarea
-            name="technodescription"
+            name="descrption"
             cols="30"
             rows="10"
-            value={techno.technodescription}
+            value={techno.descrption}
             onChange={(event) => handleChange(event)}
           ></textarea>
           <br />

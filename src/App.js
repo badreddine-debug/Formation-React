@@ -6,16 +6,26 @@ import TechnoAdd from "./pages/TechnoAdd";
 import TechnoList from "./pages/TechnoList";
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import { v1 as uuid } from "uuid";
 
 function App() {
   const [technos, setTechnos] = useState([
-    { name: "React", categorie: "Front", descrption: "Technologie front" },
-    { name: "Node", categorie: "back", descrption: "technologie back" },
+    {
+      id: uuid(),
+      name: "React",
+      categorie: "Front",
+      descrption: "Technologie front",
+    },
+    {
+      id: uuid(),
+      name: "Node",
+      categorie: "back",
+      descrption: "technologie back",
+    },
   ]);
 
   function handleAddTechno(techno) {
-    console.log("add", technos);
-    setTechnos([...technos, techno]);
+    setTechnos([...technos, { ...techno, id: uuid() }]);
   }
 
   return (
@@ -29,7 +39,10 @@ function App() {
             <TechnoAdd AddTechno={handleAddTechno} hello="Word"></TechnoAdd>
           }
         ></Route>
-        <Route path="/list" element={<TechnoList></TechnoList>}></Route>
+        <Route
+          path="/list"
+          element={<TechnoList listTechno={technos}></TechnoList>}
+        ></Route>
       </Routes>
     </div>
   );
